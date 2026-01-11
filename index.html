@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suharssh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1>Suharssh</h1>
+
+            <nav>
+                <a href="#about">About</a>
+                <a href="#off-the-clock">Off the Clock</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <section id="about" class="reveal">
+            <div class="intro-row">
+                <img src="website photo.jpg" alt="Suharssh profile photo">
+
+                <div class="intro-text">
+                    <h2>hey, i’m suharssh.</h2>
+                    <p>
+                    I’m a Computer Science student with a strong interest in machine learning,
+                    deep learning, and building applied, data-driven systems.
+                    </p>
+                </div>
+            </div>
+            <div class="page-container">
+            <h2>About Me</h2>
+            
+            <p>
+                I am a Computer Science student with a strong interest in machine learning, deep learning,
+                and applied data-driven systems. My work focuses on building end-to-end solutions that combine
+                solid theoretical foundations with practical engineering considerations.
+            </p>
+            <p>
+                I enjoy working on problems that require understanding complex data, designing robust models,
+                and translating technical ideas into clear, maintainable implementations. My academic and
+                project experience spans research-oriented work as well as applied problem solving.
+            </p>
+        </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2>Notable Projects</h2>
+
+            <div class="project-card">
+                <h3>Sleep Stage Analysis with Deep Learning & XAI</h3>
+                <p>
+                    Built a deep learning based system for sleep stage classification using EEG/PSG data.
+                    Integrated CNN, LSTM, and Transformer-based models with explainability techniques
+                    such as SHAP and LIME to improve interpretability and clinical relevance.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Cotton Plant Leaf Disease Detection</h3>
+                <p>
+                    Designed and trained convolutional neural networks to detect and classify diseases
+                    in cotton plant leaves. Focused on dataset preprocessing, augmentation, and model
+                    evaluation for real-world deployment scenarios.
+                </p>
+            </div>
+
+            <a href="projects.html" class="view-all">
+                View all projects →
+            </a>
+        </section>
+
+        <section id="off-the-clock" class="reveal">
+            <div class="page-container">
+            <h2>Off the Clock</h2>
+
+            <p>
+                Football is something I actively make time for. I play regularly and enjoy both the competitive
+                aspect of the game and the discipline that comes with being part of a team. It has strongly
+                influenced how I think about collaboration, adaptability, and consistency.
+            </p>
+
+            <p>
+                Music is a constant part of my day. I spend a lot of time discovering new artists and genres,
+                and I am always curating playlists based on mood and activity. Whether I am coding, traveling,
+                or training, music is almost always playing in the background.
+            </p>
+
+            <p>
+                I train at the gym consistently and treat fitness as a long-term discipline rather than a
+                short-term goal. The mindset of incremental improvement and routine carries over directly
+                into how I approach learning and technical projects.
+            </p>
+
+            <p>
+                I am also an active gamer across PC and mobile platforms, including Valorant, FIFA, Rocket
+                League, Destiny 2, and Clash Royale. In Clash Royale, I consistently rank within the top 5%
+                of players globally, reflecting a strong focus on strategy, optimization, and long-term
+                progression.
+            </p>
+        </div>
+        </section>
+
+        <section id="contact" class="reveal">
+            <hr>
+
+            <div class="social-icons">
+                <a href="https://github.com/Suharssh" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/s-v-suharssh-4267a3260/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="mailto:suharssh@email.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a href="Suharssh_CV.pdf" target="_blank" aria-label="Resume">
+                    <i class="fa-solid fa-file-lines"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+    <!-- <aside class="music-panel">
+    <h3>Currently Listening</h3>
+    <iframe 
+        allow="autoplay *; encrypted-media *;" 
+        frameborder="0" 
+        height="450" 
+        style="width:100%;max-width:660px;overflow:hidden;background:transparent;" 
+        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+        src="https://embed.music.apple.com/in/playlist/313/pl.u-leyl1reTPLW3bk1?theme=dark">
+    </iframe>
+    </aside> -->
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight * 0.85;
+
+                if (sectionTop < triggerPoint) {
+                    section.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
+
+
