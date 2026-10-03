@@ -171,7 +171,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 // boot line: types itself out while the hero name writes in (CSS)
 (function boot() {
     const line = '$ ./play --album suharssh';
-    if (reduce) return print('type help or tap a chip');
+    if (reduce) return print('type help for commands, or tap a section below');
     const p = document.createElement('p');
     p.className = 'echo';
     out.append(p);
@@ -179,6 +179,6 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     (function tick() {
         p.textContent = line.slice(0, ++n);
         if (n < line.length) setTimeout(tick, 30);
-        else setTimeout(() => print('type help or tap a chip'), 250);
+        else setTimeout(() => print('type help for commands, or tap a section below'), 250);
     })();
 })();

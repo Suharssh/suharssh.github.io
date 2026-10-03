@@ -111,7 +111,19 @@ h1, h2, h3 {
     transition: background-color var(--fade), color var(--fade), border-color var(--fade);
 }
 .term .wrap { padding-block: 0.5rem; }
-.term form { display: flex; gap: 1ch; align-items: center; }
+/* the prompt looks like an input box, so people know they can type */
+.term form {
+    display: flex;
+    gap: 1ch;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--muted);
+    border-radius: 6px;
+    background: rgb(0 0 0 / 0.25);
+    cursor: text;
+}
+.term form:focus-within { border-color: var(--accent); }
+.term input:focus { outline: none; } /* the form's border shows focus instead */
 .term label { color: var(--accent); white-space: nowrap; }
 .term input {
     flex: 1;
@@ -169,14 +181,15 @@ h1, h2, h3 {
     font: inherit;
     font-size: 0.78rem;
     padding: 0.2rem 0.65rem;
-    border: 1px solid var(--line);
+    border: 1px solid var(--muted);
     border-radius: 999px;
-    background: none;
+    background: rgb(255 255 255 / 0.08);
     color: var(--fg);
     text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
-.chips a:hover, .chips button:hover { border-color: var(--accent); color: var(--accent); }
+.chips a:hover, .chips button:hover, .chips a:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--surface); }
 
 /* track progress: JS sets --p from 0 to 1 as you scroll */
 .bar { height: 3px; background: var(--line); }
