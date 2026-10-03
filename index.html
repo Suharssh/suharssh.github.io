@@ -1,163 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" data-era="ye">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Suharssh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="Suharssh: CS student building machine learning and deep learning systems for real-world data.">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=DM+Serif+Display&family=Righteous&family=Space+Mono:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- runs before first paint, so JS-only UI never flashes in or out -->
+    <script>document.documentElement.classList.replace('no-js', 'js');</script>
+    <script src="cli.js" defer></script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <h1>Suharssh</h1>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#off-the-clock">Off the Clock</a>
-                <a href="#contact">Contact</a>
+    <div class="term">
+        <div class="wrap">
+            <p class="np" aria-hidden="true"><span class="vinyl"><span class="disc"></span></span><span class="eq"><i></i><i></i><i></i><i></i></span><span id="np">ye · Ye</span><span id="time">0:00 / 3:45</span></p>
+            <div id="out" aria-live="polite"></div>
+            <form id="cli" autocomplete="off">
+                <label for="cmd">~/suharssh $</label>
+                <input id="cmd" type="text" spellcheck="false" autocapitalize="off" placeholder="type help">
+            </form>
+            <nav class="chips" aria-label="Sections">
+                <a href="#about" data-cmd="play ye">ye · about</a>
+                <a href="#projects" data-cmd="play gambino">gambino · projects</a>
+                <a href="#b-side" data-cmd="play cole">cole · b-side</a>
+                <a href="#liner-notes" data-cmd="play gunn">gunn · contact</a>
             </nav>
         </div>
-    </header>
+        <div class="bar" aria-hidden="true"><span></span></div>
+    </div>
 
-    <main class="page-container">
-        <section id="about" class="reveal">
-            <div class="intro-row">
-                <img src="website photo.jpg" alt="Suharssh profile photo">
+    <!-- the big record on the right: just spins; its label wears the current artist -->
+    <div class="turntable" aria-hidden="true">
+        <div class="spin"><div class="lp"><span class="label">suharssh · side a</span></div></div>
+    </div>
 
-                <div class="intro-text">
-                    <h2>hey, i’m suharssh.</h2>
+    <main>
+        <section id="about" class="panel" data-panel="ye" data-album="ye" data-artist="Ye">
+            <div class="atmo" aria-hidden="true">
+                <i class="cloud" style="--y: 2%; --d: 46s"></i>
+                <i class="cloud" style="--y: 12%; --d: 64s; --delay: -20s"></i>
+                <i class="cloud" style="--y: 6%; --d: 80s; --delay: -50s"></i>
+            </div>
+            <div class="wrap">
+                <header class="hero">
+                    <p class="advisory">Parental advisory<br>explicit models</p>
+                    <h1>Suharssh</h1>
+                    <p class="tagline">Machine learning &amp; deep learning on messy, real-world data. No ghostwriters.</p>
+                    <!-- a Teton-style ridgeline drawn from scratch, in the ye cover's colours -->
+                    <p class="scrawl" aria-hidden="true">I hate being<br>Bi-Polar<br>its awesome</p>
+                    <svg class="ridge" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="snow" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="200">
+                                <stop offset="0" stop-color="#e2ddd2" stop-opacity=".7"/>
+                                <stop offset=".35" stop-color="#6c8199" stop-opacity=".6"/>
+                                <stop offset="1" stop-color="#2f496c"/>
+                            </linearGradient>
+                            <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#111f2a"/>
+                                <stop offset="1" stop-color="#1a2f48"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#snow)" d="M0 200V120L90 95 170 115 260 70 330 92 420 55 500 85 600 30 660 60 720 20 790 70 860 50 950 95 1040 72 1120 100 1200 85V200Z"/>
+                        <path fill="url(#field)" d="M0 200V150L120 130 210 150 330 118 450 140 560 112 680 135 800 115 930 142 1060 125 1200 140V200Z"/>
+                    </svg>
+                </header>
+
+                <div class="reveal">
+<p class="kicker">Track 01 · about</p>
+                <h2>&ldquo;I&rsquo;m on the pursuit of awesomeness, excellence is the bare minimum.&rdquo;</h2>
+                <p class="cite">&mdash; Kanye West</p>
                     <p>
-                    My work focuses on applying machine learning and deep learning to complex, real-world data problems.
+                        I'm a Computer Science student into machine learning, deep learning and applied data-driven
+                        systems. I build end-to-end, from the first sample to the final master: solid theory underneath,
+                        practical engineering on top.
+                    </p>
+                    <p>
+                        I like problems where you have to dig through the data like crates before building anything,
+                        design models that hold up, and turn the idea into code someone else can maintain. My work spans
+                        research projects and applied problem solving.
                     </p>
                 </div>
             </div>
-            <div class="page-container">
-            <h2>About Me</h2>
-            
-            <p>
-                I am a Computer Science student with a strong interest in machine learning, deep learning,
-                and applied data-driven systems. My work focuses on building end-to-end solutions that combine
-                solid theoretical foundations with practical engineering considerations.
-            </p>
-            <p>
-                I enjoy working on problems that require understanding complex data, designing robust models,
-                and translating technical ideas into clear, maintainable implementations. My academic and
-                project experience spans research-oriented work as well as applied problem solving.
-            </p>
-        </div>
         </section>
 
-        <section id="projects" class="reveal">
-            <h2>Notable Projects</h2>
-
-            <div class="project-card">
-                <h3>Sleep Stage Analysis with Deep Learning & XAI</h3>
-                <p>
-                    Built a deep learning based system for sleep stage classification using EEG/PSG data.
-                    Integrated CNN, LSTM, and Transformer-based models with explainability techniques
-                    such as SHAP and LIME to improve interpretability and clinical relevance.
-                </p>
+        <section id="projects" class="panel" data-panel="gambino" data-album="Awaken, My Love!" data-artist="Childish Gambino">
+            <div class="atmo" aria-hidden="true"><i class="halo"></i></div>
+            <div class="wrap reveal">
+<p class="kicker">Track 02 · projects</p>
+                <h2>&ldquo;When something is actually truly functional and it&rsquo;s easy to get to, I love that.&rdquo;</h2>
+                <p class="cite">&mdash; Donald Glover</p>
+                <ol class="tracks">
+                    <li class="track" id="sleep-xai">
+                        <details>
+                            <summary>
+                                <span class="no">01</span>
+                                <h3>Sleep Stage Analysis with Deep Learning &amp; XAI</h3>
+                                <span class="meta">CNN · LSTM · Transformer · feat. SHAP &amp; LIME</span>
+                            </summary>
+                            <div class="body">
+                                <p>
+                                    Final-year research project on automated sleep stage classification from EEG/PSG data.
+                                    Implemented CNN, LSTM, DNN and Transformer-based architectures, with SHAP and LIME
+                                    for explainability. Knowledge graphs add interpretability and reasoning over sleep patterns.
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="track" id="varys">
+                        <details>
+                            <summary>
+                                <span class="no">02</span>
+                                <h3>V.A.R.Y.S: Video Analysis for Real-time Yield of Sentiments</h3>
+                                <span class="meta">Transformers · weak supervision · multimodal</span>
+                            </summary>
+                            <div class="body">
+                                <p>
+                                    A multimodal AI system for context-aware, real-time analysis of social media comment
+                                    sections. It combines video, audio, metadata and comments to derive stance, sentiment depth,
+                                    demographic patterns and statistical summaries, going beyond binary sentiment.
+                                </p>
+                                <p>
+                                    Applied to political unrest, media controversies and social movements, it shows how content,
+                                    creator influence and context shape opinion at scale.
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="track" id="cotton">
+                        <details>
+                            <summary>
+                                <span class="no">03</span>
+                                <h3>Cotton Plant Leaf Disease Detection</h3>
+                                <span class="meta">CNN · augmentation · computer vision</span>
+                            </summary>
+                            <div class="body">
+                                <p>
+                                    Deep learning models that detect and classify diseases in cotton plant leaves. The focus was
+                                    preprocessing, data augmentation, CNN architectures and evaluation for real agricultural use.
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="track" id="taxi">
+                        <details>
+                            <summary>
+                                <span class="no">04</span>
+                                <h3>Taxi Trip Duration Prediction</h3>
+                                <span class="meta">feature engineering · regression</span>
+                            </summary>
+                            <div class="body">
+                                <p>
+                                    An ML model predicting taxi trip durations from structured trip data, with feature engineering
+                                    to measure how temporal, geographic and demand factors affect travel time.
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="track" id="air-piano">
+                        <details>
+                            <summary>
+                                <span class="no">05</span>
+                                <h3>Air Piano: Gesture-Based Instrument</h3>
+                                <span class="meta">Arduino Uno · flex sensors · HCI</span>
+                            </summary>
+                            <div class="body">
+                                <p>
+                                    A wearable glove with three flex sensors on an Arduino Uno. Each sensor has two bend thresholds,
+                                    so one finger plays two tones. Sensor readings are processed in real time and sent to software
+                                    for audio playback.
+                                </p>
+                                <p>
+                                    Beyond music, it explores accessibility: simple hand gestures that let elderly or physically
+                                    impaired users trigger audio cues or alerts.
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                </ol>
+                <p class="more"><a href="https://github.com/Suharssh">Full discography on GitHub ↗</a></p>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Cotton Plant Leaf Disease Detection</h3>
-                <p>
-                    Designed and trained convolutional neural networks to detect and classify diseases
-                    in cotton plant leaves. Focused on dataset preprocessing, augmentation, and model
-                    evaluation for real-world deployment scenarios.
-                </p>
+        <section id="b-side" class="panel" data-panel="cole" data-album="2014 Forest Hills Drive" data-artist="J. Cole">
+            <div class="atmo" aria-hidden="true">
+                <i class="bokeh" style="--x: 6%; --y: 8%; --s: 9rem; --d: 19s; --c: #737e44"></i>
+                <i class="bokeh" style="--x: 70%; --y: 4%; --s: 12rem; --d: 26s; --c: #8595a9"></i>
+                <i class="bokeh" style="--x: 40%; --y: 30%; --s: 6rem; --d: 15s; --c: #c3c6c7"></i>
+                <i class="bokeh" style="--x: 82%; --y: 45%; --s: 8rem; --d: 22s; --c: #395f91"></i>
+                <i class="bokeh" style="--x: 15%; --y: 60%; --s: 11rem; --d: 30s; --c: #737e44"></i>
+                <i class="bokeh" style="--x: 55%; --y: 75%; --s: 7rem; --d: 18s; --c: #8595a9"></i>
             </div>
-
-            <a href="projects.html" class="view-all">
-                View all projects →
-            </a>
-        </section>
-
-        <section id="off-the-clock" class="reveal">
-            <div class="page-container">
-            <h2>Off the Clock</h2>
-
-            <p>
-                Football is something I actively make time for. I play regularly and enjoy both the competitive
-                aspect of the game and the discipline that comes with being part of a team. It has strongly
-                influenced how I think about collaboration, adaptability, and consistency.
-            </p>
-
-            <p>
-                Music is a constant part of my day. I spend a lot of time discovering new artists and genres,
-                and I am always curating playlists based on mood and activity. Whether I am coding, traveling,
-                or training, music is almost always playing in the background.
-            </p>
-
-            <p>
-                I train at the gym consistently and treat fitness as a long-term discipline rather than a
-                short-term goal. The mindset of incremental improvement and routine carries over directly
-                into how I approach learning and technical projects.
-            </p>
-
-            <p>
-                I am also an active gamer across PC and mobile platforms, including Valorant, FIFA, Rocket
-                League, Destiny 2, and Clash Royale. In Clash Royale, I consistently rank within the top 5%
-                of players globally, reflecting a strong focus on strategy, optimization, and long-term
-                progression.
-            </p>
-        </div>
-        </section>
-
-        <section id="contact" class="reveal">
-            <hr>
-
-            <div class="social-icons">
-                <a href="https://github.com/Suharssh" target="_blank" aria-label="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/s-v-suharssh-4267a3260/" target="_blank" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-
-                <a href="mailto:suharssh@email.com" aria-label="Email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href="Suharssh_CV.pdf" target="_blank" aria-label="Resume">
-                    <i class="fa-solid fa-file-lines"></i>
-                </a>
+            <div class="wrap reveal">
+<p class="kicker">Track 03 · off the clock</p>
+                <h2>&ldquo;Are you going to quit or are you going to start right now?&rdquo;</h2>
+                <p class="cite">&mdash; J. Cole</p>
+                <dl class="bside">
+                    <dt>Football</dt>
+                    <dd>I play regularly. Being on a team shaped how I think about collaboration, adaptability and consistency.</dd>
+                    <dt>Music</dt>
+                    <dd>Always on, whether I'm coding, travelling or training. I'm constantly digging for new artists and curating playlists by mood.</dd>
+                    <dt>Gym</dt>
+                    <dd>Fitness is a long-term discipline, not a short-term goal. Small improvements, done daily, the same way I learn.</dd>
+                    <dt>Gaming</dt>
+                    <dd>Valorant, FIFA, Rocket League, Destiny 2 and Clash Royale, where I sit in the top 5% of players globally.</dd>
+                </dl>
             </div>
         </section>
 
+        <section id="liner-notes" class="panel" data-panel="gunn" data-album="Griselda Ghost" data-artist="Westside Gunn &amp; Conway">
+            <div class="atmo" aria-hidden="true"><i class="grain"></i></div>
+            <div class="wrap reveal">
+<p class="kicker">Track 04 · contact</p>
+                <h2>&ldquo;I love putting different people together and just painting a certain picture.&rdquo;</h2>
+                <p class="cite">&mdash; Westside Gunn</p>
+                <ul class="links">
+                    <li><a href="https://github.com/Suharssh">github ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/s-v-suharssh-4267a3260/">linkedin ↗</a></li>
+                    <li><a href="mailto:suharssh@gmail.com">suharssh@gmail.com</a></li>
+                    <li><a href="suharssh-cv.pdf">cv.pdf ↓</a></li>
+                </ul>
+                <footer>
+                    <p>© 2026 Suharssh · hand-written html, css &amp; a little js. no frameworks were harmed.</p>
+                </footer>
+            </div>
+        </section>
     </main>
-    <!-- <aside class="music-panel">
-    <h3>Currently Listening</h3>
-    <iframe 
-        allow="autoplay *; encrypted-media *;" 
-        frameborder="0" 
-        height="450" 
-        style="width:100%;max-width:660px;overflow:hidden;background:transparent;" 
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-        src="https://embed.music.apple.com/in/playlist/313/pl.u-leyl1reTPLW3bk1?theme=dark">
-    </iframe>
-    </aside> -->
-    <script>
-        const reveals = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            reveals.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const triggerPoint = window.innerHeight * 0.85;
-
-                if (sectionTop < triggerPoint) {
-                    section.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
-    </script>
 </body>
 </html>
-
-
